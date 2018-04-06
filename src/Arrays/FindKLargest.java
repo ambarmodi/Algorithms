@@ -3,9 +3,10 @@ package Arrays;
 /**
  * @author ambarmodi
  * 
- *         Description: Find the kth largest element in an unsorted array. 
- *          
+ *         Description: Find the kth largest element in an unsorted array.
+ * 
  *         For example, Given [3,2,1,5,6,4] and k = 2, return 5.
+ * 
  */
 public class FindKLargest {
 	public static void main(String[] args) {
@@ -16,7 +17,13 @@ public class FindKLargest {
 	}
 
 	/**
-	 * Solution: Put index at K and check if pivot is index.
+	 * Solution: Quick-Select
+	 * 
+	 * TC: O(nlgn)
+	 * 
+	 * Put index at K and apply quick sort. In this case, all element less than
+	 * index (K) will be on left and all greater than K will be on right. The
+	 * value at K will be the result.
 	 */
 	public static int findKthLargest(int[] nums, int k) {
 		int index = nums.length - k;
