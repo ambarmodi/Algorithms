@@ -11,7 +11,8 @@ public class BitManipultion {
 
 		System.out.println("Compliment of 5 is " + findComplement(5));
 		System.out.println("Bit representation of 15 is " + bitRepresent(15));
-		System.out.println("128 is power of two: " + isPowerOfTwo(128));
+		System.out.println("536870912 is power of two: " + isPowerOfTwo(536870912));
+		System.out.println("-2147483648 is power of two: " + isPowerOfTwo(-2147483648));
 		System.out.println("Hamming Distance= " + hammingDistnce(4, 2));
 		System.out.println("Number of set bit in 15 are " + bitCount(15));
 	}
@@ -49,10 +50,20 @@ public class BitManipultion {
 
 	/**
 	 * Power of 2 using LOG
+	 * NOTE: If the number <=0 then it cannot be the power of two hence return false. 
 	 */
 	private static boolean isPowerOfTwo(int num) {
+		if(num<=0) return false;
+        return (num & (num-1))==0;
+	}
+	
+	/**
+	 * Power of 2 using BIT Manipulation
+	 * Issue: Wont work for all inputs as (Math.log(num) / Math.log(2)) isn't exactly equal to lg(num).
+	 */
+	public static boolean isPowerOfTwo_partial(int num) {
 		double val = (Math.log(num) / Math.log(2));
-		return Math.ceil(val) == Math.floor(val);
+		return (Math.ceil(val)) == (Math.floor(val)) ;
 	}
 
 	/**
