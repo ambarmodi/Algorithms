@@ -5,10 +5,10 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * @author ambarmodi 
- * 	
- * Description: Check if two nodes are siblings
- * Question: https://www.geeksforgeeks.org/check-two-nodes-cousins-binary-tree/
+ * @author ambarmodi
+ * 
+ *         Description: Check if two nodes are siblings Question:
+ *         https://www.geeksforgeeks.org/check-two-nodes-cousins-binary-tree/
  *
  */
 public class CousinNodes {
@@ -28,19 +28,23 @@ public class CousinNodes {
 	}
 
 	/**
-	 * Brute Force(Naive approach) where I am maintaining two Maps.
+	 * Brute Force(Naive approach) where I am maintaining two Maps. Both the
+	 * maps contains all the information about every node and at the end we
+	 * simple query the map to get the results.
+	 * 
+	 * Issue: Exhaustive search, Space complexity is O(n)
 	 */
 	private static boolean isCousins(TreeNode root, TreeNode a, TreeNode b) {
 		if (root == null)
 			return false;
 
 		Queue<TreeNode> queue = new LinkedList<TreeNode>();
-		
-		//Hold all the parent of all the nodes
-		HashMap<TreeNode, TreeNode> parents = new HashMap<>(); 
-		
+
+		// Hold all the parent of all the nodes
+		HashMap<TreeNode, TreeNode> parents = new HashMap<>();
+
 		// Hold level of all the nodes
-		HashMap<TreeNode, Integer> nodeLevel = new HashMap<>(); 
+		HashMap<TreeNode, Integer> nodeLevel = new HashMap<>();
 		int currCnt = 0, levelCnt = 1;
 
 		queue.add(root);
