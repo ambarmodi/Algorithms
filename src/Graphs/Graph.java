@@ -3,13 +3,11 @@ package Graphs;
 import java.util.*;
 
 /**
- * Graph can be represented in various ways viz. 
- * 1. Adjacency list. SC: O(V+E)
- * 2. Adjacency Matrix 
- * 3. Object-Oriented: Each vertex v as objects(Nodes). V.neighbors will
- * be the Adj[V].
- * 4. Implicit representation where we compute the neighbors on the fly. This takes less space. Usage is representing state of a rubix cube.
- * Rubix cube has bajillion states and each state is a vertex. 
+ * Graph can be represented in various ways viz. 1. Adjacency list. SC: O(V+E)
+ * 2. Adjacency Matrix 3. Object-Oriented: Each vertex v as objects(Nodes).
+ * V.neighbors will be the Adj[V]. 4. Implicit representation where we compute
+ * the neighbors on the fly. This takes less space. Usage is representing state
+ * of a rubix cube. Rubix cube has bajillion states and each state is a vertex.
  * 
  * Below is the implementation of Graph using Adjacency List as it is convenient
  * if we have multiple graphs for the same vertices. In that case we can have

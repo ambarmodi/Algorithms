@@ -41,6 +41,10 @@ public class ShortestPath {
 	 * We also maintain the distance of each node from starting Vertex.
 	 *
 	 * TC: O(E+V)
+	 * 
+	 * NOTE: This is better for un-weighted graphs and it only gives shortest
+	 * steps (As we are always adding 1 to distance).
+	 * So BFS is useful if we have same distance between all nodes.
 	 */
 	private static void findShortestPath(Graph graph, int startVertex, int targetVertex) {
 		Queue<Integer> queue = new LinkedList<Integer>();
