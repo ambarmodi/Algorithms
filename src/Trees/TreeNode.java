@@ -22,4 +22,8 @@ public class TreeNode {
 	public String toString() {
 		return " " + this.val;
 	}
+	
+	public boolean isLeaf() {
+		return (this.left==null && this.right==null);
+	}
 }
